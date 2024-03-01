@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Note</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1; /* Light pink background */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f1f1f1; /* Light gray container background */
+            border-radius: 10px; /* Increased border radius */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ff1493; /* Deep pink color for the title */
+            font-size: 28px; /* Increased font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow effect */
+        }
+        form {
+            margin-top: 20px;
+        }
+        textarea {
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #111010;
+            border-radius: 5px;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #ff69b4; /* Hot pink submit button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Note</h1>
+        <form action="{{ url_for('edit', index=index) }}" method="post">
+            <textarea name="note" rows="6">{{ note }}</textarea><br><br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+</body>
+</html>
